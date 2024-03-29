@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script Coordinates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: #ffffff; /* Alteração para cor branca */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .label {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="copyScript()">Cópia Script</button>
+  <div class="label">Script de coordenadas para Roblox</div>
+
+  <script>
+    function copyScript() {
+      var script = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/scripterCreator/Script-coordinates-/main/Script.lua"))()';
+      navigator.clipboard.writeText(script)
+        .then(() => alert('Script copiado com sucesso!'))
+        .catch(() => alert('Não foi possível copiar o script.'));
+    }
+  </script>
+</body>
+</html>
